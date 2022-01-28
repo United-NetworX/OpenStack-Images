@@ -59,6 +59,3 @@ resolv_conf:
     options:
         rotate: true
         timeout: 1
-
-package_update: true
-package_upgrade: true
