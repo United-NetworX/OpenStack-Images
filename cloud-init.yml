@@ -59,3 +59,11 @@ resolv_conf:
     options:
         rotate: true
         timeout: 1
+
+apt:
+  preserve_sources_list: false
+  primary:
+    - arches:
+        - amd64
+        - default
+      uri: 'https://ftp.uni-stuttgart.de/ubuntu/'
