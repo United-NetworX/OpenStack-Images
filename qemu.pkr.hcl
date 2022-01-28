@@ -82,4 +82,8 @@ build {
     inline = ["sudo sync"]
   }
 
+  provisioner "ansible" {
+    playbook_file = "./os-hardening.yml"
+  }
+
 }
