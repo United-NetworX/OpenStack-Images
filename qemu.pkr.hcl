@@ -50,7 +50,7 @@ locals {
   vm_name = "ubuntu18.04-${local.timestamp}.qcow2"
 }
 
-source "qemu" "Ubuntu18.04" {
+source "qemu" "ubuntu" {
   accelerator         = "tcg"
   boot_command        = ["<enter>"]
   disk_compression    = true
@@ -71,7 +71,7 @@ source "qemu" "Ubuntu18.04" {
 }
 
 build {
-  sources = ["source.qemu.Ubuntu18.04"]
+  sources = ["source.qemu.ubuntu"]
 
   provisioner "shell" {
     execute_command = "echo '${var.ssh_password}' | {{ .Vars }} sudo -E -S bash -x '{{ .Path }}'"
