@@ -47,7 +47,7 @@ variable "ssh_username" {
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 locals {
-  vm_name = "kubernetes-${local.timestamp}.qcow2"
+  vm_name = "ubuntu18.04-${local.timestamp}.qcow2"
 }
 
 source "qemu" "Ubuntu18.04" {
