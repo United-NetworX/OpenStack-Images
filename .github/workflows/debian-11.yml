@@ -1,6 +1,6 @@
 ---
 
-name: Packer Debian
+name: Packer Debian 11
 
 on:
   push:

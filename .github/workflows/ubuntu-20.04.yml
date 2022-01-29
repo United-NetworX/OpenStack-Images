@@ -1,6 +1,6 @@
 ---
 
-name: Packer Ubuntu
+name: Packer Ubuntu 20.04
 
 on:
   push:
