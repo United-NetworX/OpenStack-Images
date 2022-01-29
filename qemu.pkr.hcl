@@ -86,4 +86,8 @@ build {
     playbook_file = "./os-hardening.yml"
   }
 
+  post-processor "shell-local" {
+    inline = ["userdel ubuntu && rm -rf /home/ubuntu"]
+  }
+
 }
