@@ -89,9 +89,13 @@ build {
     user = "${var.ssh_username}"
   }
 
-  post-processor "shell-local" {
+  provisioner "shell" {
     execute_command = "echo '${var.ssh_password}' | {{ .Vars }} sudo -E -S bash -x '{{ .Path }}'"
     scripts         = ["post_setup.sh"]
+  }
+
+  provisioner "shell" {
+    inline = ["sudo sync"]
   }
 
 }
