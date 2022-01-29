@@ -89,7 +89,7 @@ build {
     user = "${var.ssh_username}"
   }
 
-  post-processor "shell" {
+  post-processor "shell-local" {
     execute_command = "echo '${var.ssh_password}' | {{ .Vars }} sudo -E -S bash -x '{{ .Path }}'"
     scripts         = ["post_setup.sh"]
   }
