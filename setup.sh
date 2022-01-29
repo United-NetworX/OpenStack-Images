@@ -16,4 +16,4 @@ apt-get autoclean
 
 apt-get autoremove -y
 
-echo "ubuntu    ALL=(ALL:ALL) ALL" >> /etc/sudoers
+echo "ubuntu    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
