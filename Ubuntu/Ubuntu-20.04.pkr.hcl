@@ -1,7 +1,7 @@
 
 variable "cloud_init_image" {
   type    = string
-  default = "cloud-init.img"
+  default = "Ubuntu/cloud-init.img"
 }
 
 variable "cpus" {
@@ -75,7 +75,7 @@ build {
 
   provisioner "shell" {
     execute_command = "echo '${var.ssh_password}' | {{ .Vars }} sudo -E -S bash -x '{{ .Path }}'"
-    scripts         = ["pre_setup.sh"]
+    scripts         = ["Ubuntu/pre_setup.sh"]
   }
 
   provisioner "shell" {
@@ -83,7 +83,7 @@ build {
   }
 
   provisioner "ansible" {
-    playbook_file = "../os-hardening.yml"
+    playbook_file = "./os-hardening.yml"
     ansible_env_vars = ["ANSIBLE_NOCOLOR=True"]
     extra_arguments = ["--become"]
     user = "${var.ssh_username}"
@@ -91,7 +91,7 @@ build {
 
   provisioner "shell" {
     execute_command = "echo '${var.ssh_password}' | {{ .Vars }} sudo -E -S bash -x '{{ .Path }}'"
-    scripts         = ["post_setup.sh"]
+    scripts         = ["Ubuntu/post_setup.sh"]
   }
 
   provisioner "shell" {
