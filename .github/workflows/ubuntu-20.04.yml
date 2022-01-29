@@ -10,7 +10,7 @@ on:
 
 jobs:
   packer:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     name: ubuntu
 
     steps:
@@ -26,9 +26,6 @@ jobs:
 
       - name: Download Ansible Collection
         run: ansible-galaxy collection install devsec.hardening
-      
-      - name: Configure Ansible
-        run: sudo echo "remote_tmp     = /tmp/.ansible-${USER}/tmp" >> /etc/ansible/ansible.cfg
 
       - name: Checkout Repository
         uses: actions/checkout@v2
