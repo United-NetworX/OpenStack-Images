@@ -1,5 +1,6 @@
-- hosts: all
-  become: yes
-  user: root
+# playbook.yml
+- name: 'Provision Image'
+  hosts: default
+  become: true
   collections:
     - devsec.hardening
