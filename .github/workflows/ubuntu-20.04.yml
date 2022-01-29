@@ -46,6 +46,6 @@ jobs:
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ steps.version.outputs.tag }}
+          tag_name: latest
           files: |
             *.qcow2
