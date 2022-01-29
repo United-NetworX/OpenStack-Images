@@ -13,15 +13,12 @@ jobs:
     name: ubuntu
 
     steps:
+
+      - name: Install Utils
+        run: sudo apt-get install -y qemu-system
+
       - name: Checkout Repository
         uses: actions/checkout@v2
-
-      # fix backwards incompatibilities in template
-      - name: Fix Template
-        uses: hashicorp/packer-github-actions@master
-        with:
-          command: fix
-          target: Ubuntu/Ubuntu-20.04.pkr.hcl Ubuntu/Ubuntu-18.04.pkr.hcl
 
       # validate templates
       - name: Validate Template
