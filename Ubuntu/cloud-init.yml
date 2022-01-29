@@ -45,7 +45,7 @@ ntp:
   enabled: true
   servers:
     - 85.236.210.1
-    - ntp.ubuntu.com
+    - de.pool.ntp.org
 
 locale: en_US.UTF-8
 locale_configfile: /etc/default/locale
