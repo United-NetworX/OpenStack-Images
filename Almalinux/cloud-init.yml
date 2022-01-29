@@ -1,0 +1,61 @@
+#cloud-config
+disable_root: false
+password: mer0s
+ssh_pwauth: true
+chpasswd:
+  expire: false
+
+keyboard:
+  layout: de
+
+ca-certs:
+    remove-defaults: false
+    trusted:
+        - |
+          -----BEGIN CERTIFICATE-----
+          MIIBtzCCAV6gAwIBAgIRALu7mr/tBhKCz/tq9fBQ2ugwCgYIKoZIzj0EAwIwOjEX
+          MBUGA1UEChMOTWVyb3MgQ2xvdWQgQ0ExHzAdBgNVBAMTFk1lcm9zIENsb3VkIENB
+          IFJvb3QgQ0EwHhcNMjExMTIxMTUyODEwWhcNMzExMTE5MTUyODEwWjA6MRcwFQYD
+          VQQKEw5NZXJvcyBDbG91ZCBDQTEfMB0GA1UEAxMWTWVyb3MgQ2xvdWQgQ0EgUm9v
+          dCBDQTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABBPv3tT9nDEBFh3BgrzOeq3/
+          m8/+qeTX18RBRTg+AwIijBiDloGFJD9al20MSezrLovA/ib72dEpVHycHHBaa6mj
+          RTBDMA4GA1UdDwEB/wQEAwIBBjASBgNVHRMBAf8ECDAGAQH/AgEBMB0GA1UdDgQW
+          BBSAmP5cmVpJ1Ne5tZeHTQLafW7xbjAKBggqhkjOPQQDAgNHADBEAiAvXZtTcFQ+
+          nxXvL5ylZsua7aYo6m23BpKrAU5aph6a8gIgTsghVXrd5KgE/289Lo1SCxLoASvX
+          NUzTjiXfGBrTADI=
+          -----END CERTIFICATE----
+        - |
+          -----BEGIN CERTIFICATE-----
+          MIIB4DCCAYagAwIBAgIQDFtnK227dT7yzerfi3F1EjAKBggqhkjOPQQDAjA6MRcw
+          FQYDVQQKEw5NZXJvcyBDbG91ZCBDQTEfMB0GA1UEAxMWTWVyb3MgQ2xvdWQgQ0Eg
+          Um9vdCBDQTAeFw0yMTExMjExNTI4MTFaFw0zMTExMTkxNTI4MTFaMEIxFzAVBgNV
+          BAoTDk1lcm9zIENsb3VkIENBMScwJQYDVQQDEx5NZXJvcyBDbG91ZCBDQSBJbnRl
+          cm1lZGlhdGUgQ0EwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASIiThER5aqWveT
+          ROJQQlsxVdONuqslzDvFQyrM+ZDQoG8yHayhwFX5IH8d+4rWbAf46tpM4FOtY4vm
+          7er0GVsxo2YwZDAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBADAd
+          BgNVHQ4EFgQUARxWv2Tgce0Jmn5gp3xnmYq3zH4wHwYDVR0jBBgwFoAUgJj+XJla
+          SdTXubWXh00C2n1u8W4wCgYIKoZIzj0EAwIDSAAwRQIgTg2Ey/hSk9qdPZj08JT7
+          Uzw6y4E+lew65m5ryGKxPoICIQCaWuY3xG91JrsIUReUluA6//M3Bq/7aOjSxFVs
+          klVY0Q==
+          -----END CERTIFICATE----
+
+timezone: Europe/Berlin
+
+ntp:
+  enabled: true
+  servers:
+    - 85.236.210.1
+    - de.pool.ntp.org
+
+locale: en_US.UTF-8
+locale_configfile: /etc/default/locale
+
+resize_rootfs: true
+
+manage_resolv_conf: true
+resolv_conf:
+    nameservers: ['85.236.210.1', '212.71.212.71']
+    domain: cloud.meros.systems
+    options:
+        rotate: true
+        timeout: 1
