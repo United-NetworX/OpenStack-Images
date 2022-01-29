@@ -17,10 +17,13 @@ jobs:
     steps:
 
       - name: Update Repos
-        run: sudo add-apt-repository ppa:ansible/ansible
+        run: |
+          curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+          sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+          sudo add-apt-repository ppa:ansible/ansible
 
       - name: Install Utils
-        run: sudo apt-get install -y qemu-system ansible
+        run: sudo apt-get install -y qemu-system ansible packer
 
       - name: Download Ansible Collection
         run: ansible-galaxy collection install devsec.hardening
@@ -30,21 +33,17 @@ jobs:
 
       # validate templates
       - name: Validate Template
-        uses: hashicorp/packer-github-actions@master
-        with:
-          command: validate
-          arguments: -syntax-only
-          target: Ubuntu/Ubuntu-20.04.pkr.hcl Ubuntu/Ubuntu-18.04.pkr.hcl
+        run: |
+          packer validate Ubuntu/Ubuntu-20.04.pkr.hcl
+          packer validate Ubuntu/Ubuntu-18.04.pkr.hcl
 
       # build artifact
       - name: Build Artifact
-        uses: hashicorp/packer-github-actions@master
-        with:
-          command: build
-          arguments: "-color=false -on-error=abort"
-          target: Ubuntu/Ubuntu-20.04.pkr.hcl Ubuntu/Ubuntu-18.04.pkr.hcl
         env:
-          PACKER_LOG: 1
+            PACKER_LOG: 1
+        run: |
+          packer build -color=false -on-error=abort Ubuntu/Ubuntu-20.04.pkr.hcl
+          packer build -color=false -on-error=abort Ubuntu/Ubuntu-18.04.pkr.hcl
 
       # additional steps to process artifacts
       - name: Upload Release
