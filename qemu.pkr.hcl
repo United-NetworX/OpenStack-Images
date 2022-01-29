@@ -86,6 +86,7 @@ build {
     playbook_file = "./os-hardening.yml"
     ansible_env_vars = ["ANSIBLE_NOCOLOR=True"]
     extra_arguments = ["--become"]
+    user = "ubuntu"
   }
 
   post-processor "shell-local" {
