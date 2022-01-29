@@ -48,4 +48,4 @@ jobs:
         with:
           tag_name: latest
           files: |
-            *.qcow2
+            build/*.qcow2
