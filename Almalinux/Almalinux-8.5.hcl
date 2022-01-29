@@ -50,7 +50,7 @@ locals {
   vm_name = "almalinux-8.5-${local.timestamp}.qcow2"
 }
 
-source "qemu" "ubuntu" {
+source "qemu" "almalinux" {
   accelerator         = "tcg"
   boot_command        = ["<enter>"]
   disk_compression    = true
