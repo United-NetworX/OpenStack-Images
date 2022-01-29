@@ -86,11 +86,11 @@ build {
     playbook_file = "./os-hardening.yml"
     ansible_env_vars = ["ANSIBLE_NOCOLOR=True"]
     extra_arguments = ["--become"]
-    user = "ubuntu"
+    user = "${var.ssh_username}"
   }
 
   post-processor "shell-local" {
-    inline = ["userdel ubuntu && rm -rf /home/ubuntu"]
+    inline = ["userdel ${var.ssh_username} && rm -rf /home/${var.ssh_username}"]
   }
 
 }
