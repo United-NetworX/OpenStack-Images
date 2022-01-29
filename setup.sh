@@ -15,3 +15,5 @@ apt-get install -y \
 apt-get autoclean
 
 apt-get autoremove -y
+
+echo "ubuntu    ALL=(ALL:ALL) ALL" >> /etc/sudoers
