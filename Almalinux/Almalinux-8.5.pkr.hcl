@@ -11,7 +11,7 @@ variable "cpus" {
 
 variable "disk_size" {
   type    = string
-  default = "8192"
+  default = "10240"
 }
 
 variable "image_checksum" {
