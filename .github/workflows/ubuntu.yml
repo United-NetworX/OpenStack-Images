@@ -2,10 +2,12 @@
 
 name: Packer Ubuntu
 
+#on:
+#  push:
+#    paths:
+#      - '**Ubuntu**'
 on:
-  push:
-    paths:
-      - '**Ubuntu**'
+  push
 
 jobs:
   packer:
