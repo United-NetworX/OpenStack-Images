@@ -1,18 +1,16 @@
 ---
 
-name: Packer Ubuntu
+name: Packer Debian
 
-#on:
-#  push:
-#    paths:
-#      - '**Ubuntu**'
 on:
-  push
+  push:
+    paths:
+      - '**Debian-10.pkr.hcl'
 
 jobs:
   packer:
     runs-on: ubuntu-latest
-    name: ubuntu
+    name: debian
 
     steps:
 
@@ -34,16 +32,14 @@ jobs:
       # validate templates
       - name: Validate Template
         run: |
-          packer validate Ubuntu/Ubuntu-20.04.pkr.hcl
-          packer validate Ubuntu/Ubuntu-18.04.pkr.hcl
+          packer validate Debian/Debian-10.pkr.hcl
 
       # build artifact
       - name: Build Artifact
         env:
             PACKER_LOG: 1
         run: |
-          packer build -color=false -on-error=abort Ubuntu/Ubuntu-20.04.pkr.hcl
-          packer build -color=false -on-error=abort Ubuntu/Ubuntu-18.04.pkr.hcl
+          packer build -color=false -on-error=abort Debian/Debian-10.pkr.hcl
 
       # additional steps to process artifacts
       - name: Upload Release

@@ -1,0 +1,50 @@
+---
+
+name: Packer Debian
+
+on:
+  push:
+    paths:
+      - '**Debian-11.pkr.hcl'
+
+jobs:
+  packer:
+    runs-on: ubuntu-latest
+    name: debian
+
+    steps:
+
+      - name: Update Repos
+        run: |
+          curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+          sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+          sudo add-apt-repository ppa:ansible/ansible
+
+      - name: Install Utils
+        run: sudo apt-get install -y qemu-system ansible packer
+
+      - name: Download Ansible Collection
+        run: ansible-galaxy collection install devsec.hardening
+
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      # validate templates
+      - name: Validate Template
+        run: |
+          packer validate Debian/Debian-11.pkr.hcl
+
+      # build artifact
+      - name: Build Artifact
+        env:
+            PACKER_LOG: 1
+        run: |
+          packer build -color=false -on-error=abort Debian/Debian-11.pkr.hcl
+
+      # additional steps to process artifacts
+      - name: Upload Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          files: |
+            *.qcow2
