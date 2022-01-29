@@ -11,7 +11,7 @@ on:
 jobs:
   packer:
     runs-on: ubuntu-latest
-    name: ubuntu
+    name: ubuntu-20.04
 
     steps:
 
