@@ -84,7 +84,6 @@ build {
 
   provisioner "ansible" {
     playbook_file = "./os-hardening.yml"
-    command = "/usr/bin/ansible-playbook"
     ansible_env_vars = ["ANSIBLE_NOCOLOR=True"]
     extra_arguments = ["--become"]
     user = "${var.ssh_username}"
