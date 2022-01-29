@@ -47,7 +47,7 @@ variable "ssh_username" {
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 locals {
-  vm_name = "debian-10-${local.timestamp}.qcow2"
+  vm_name = "debian-11-${local.timestamp}.qcow2"
 }
 
 source "qemu" "debian" {
