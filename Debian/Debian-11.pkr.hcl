@@ -16,7 +16,7 @@ variable "disk_size" {
 
 variable "image_checksum" {
   type    = string
-  default = "44e1dfcb821cec45ba290c5a88d03c23e453b51c634e0b6f09318aac15f620f28fc2b0d5c0576a35c8fee7a91246530cff0a9a9b789c03b4244c6e653220f9f0"
+  default = "0948dc56b4834a7755e4eae7d5532e138b90484a949161ffe9fc6894c7a14b1bd32ebf96fa3f3d03d498fe7ee125f8014f31bfab5825915a93de9330df814f7b"
 }
 
 variable "image_checksum_type" {
@@ -26,7 +26,7 @@ variable "image_checksum_type" {
 
 variable "image_url" {
   type    = string
-  default = "https://cdimage.debian.org/cdimage/cloud/bullseye/latest/debian-11-genericcloud-amd64.qcow2"
+  default = "https://cdimage.debian.org/cdimage/cloud/bullseye/latest/debian-11-generic-amd64.qcow2"
 }
 
 variable "memory" {
