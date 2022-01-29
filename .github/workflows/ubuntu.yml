@@ -16,9 +16,6 @@ jobs:
 
     steps:
 
-      - name: Update Repos
-        run: echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu focal main" > /etc/apt/sources.list.d/ansible.list && apt update
-
       - name: Install Utils
         run: sudo apt-get install -y qemu-system ansible
 
