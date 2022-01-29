@@ -75,7 +75,7 @@ build {
 
   provisioner "shell" {
     execute_command = "echo '${var.ssh_password}' | {{ .Vars }} sudo -E -S bash -x '{{ .Path }}'"
-    scripts         = ["setup.sh"]
+    scripts         = ["pre_setup.sh"]
   }
 
   provisioner "shell" {
@@ -89,8 +89,9 @@ build {
     user = "${var.ssh_username}"
   }
 
-  post-processor "shell-local" {
-    inline = ["userdel ${var.ssh_username} && rm -rf /home/${var.ssh_username}"]
+  post-processor "shell" {
+    execute_command = "echo '${var.ssh_password}' | {{ .Vars }} sudo -E -S bash -x '{{ .Path }}'"
+    scripts         = ["post_setup.sh"]
   }
 
 }

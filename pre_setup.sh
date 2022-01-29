@@ -12,8 +12,4 @@ apt-get update && apt-get upgrade -y
 apt-get install -y \
   apt-transport-https ca-certificates curl software-properties-common htop iftop nano
 
-apt-get autoclean
-
-apt-get autoremove -y
-
 echo "ubuntu    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
