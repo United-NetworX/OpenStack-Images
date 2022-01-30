@@ -4,6 +4,7 @@ password: mer0s
 ssh_pwauth: true
 chpasswd:
   expire: false
+chpasswd:
   list:
     - root:$6$VOgiyM/DOroN$5riHRZQ6pGSK3VvXgdaqhtbC3IAmbUZNsVe9EAuW7WenbGyRX0E0CgHWpBHXK3Lvp3fTG7r0pTceDXw.YWTWv/
     
