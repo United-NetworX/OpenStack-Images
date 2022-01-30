@@ -5,7 +5,7 @@ rm /etc/ssh/ssh_host_*
 systemctl restart sshd
 
 # Allow Root Login
-#sed -i -e '/^#PermitRootLogin/s/^.*$/PermitRootLogin yes/' /etc/ssh/sshd_config
+sed -i -e '/^#PermitRootLogin/s/^.*$/PermitRootLogin yes/' /etc/ssh/sshd_config
 
 # Package Update / Installation
 yum update -y

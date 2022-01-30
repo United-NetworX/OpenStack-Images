@@ -1,10 +1,11 @@
 #cloud-config
 disable_root: false
-password: mer0s
 ssh_pwauth: true
 chpasswd:
   expire: false
-
+  list:
+    - root:$6$VOgiyM/DOroN$5riHRZQ6pGSK3VvXgdaqhtbC3IAmbUZNsVe9EAuW7WenbGyRX0E0CgHWpBHXK3Lvp3fTG7r0pTceDXw.YWTWv/
+    
 keyboard:
   layout: de
 
