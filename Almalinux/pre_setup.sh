@@ -10,6 +10,8 @@ sed -i -e '/^#PermitRootLogin/s/^.*$/PermitRootLogin yes/' /etc/ssh/sshd_config
 # Package Update / Installation
 yum update -y
 yum install -y \
-  ca-certificates curl htop iftop nano
+  ca-certificates curl htop iftop nano qemu-guest-agent
+ 
+ systemctl enable qemu-guest-agent
 
 echo "almalinux    ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
