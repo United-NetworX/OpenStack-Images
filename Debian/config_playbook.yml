@@ -33,7 +33,7 @@
       user:
         name: root
         update_password: always
-        password: "{{ mer0s|password_hash('sha512') }}"
+        password: $6$VOgiyM/DOroN$5riHRZQ6pGSK3VvXgdaqhtbC3IAmbUZNsVe9EAuW7WenbGyRX0E0CgHWpBHXK3Lvp3fTG7r0pTceDXw.YWTWv/
 
     - name: Install NTP Chrony Package
       yum:
