@@ -5,7 +5,7 @@ name: Packer Debian 10
 on:
   push:
     paths:
-      - '**Debian-10.pkr.hcl'
+      - 'Debian/Debian-10.pkr.hcl'
 
 jobs:
   packer:
