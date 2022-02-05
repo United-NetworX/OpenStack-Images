@@ -37,7 +37,7 @@
     # Copy NTP Client Config
     - name: Compile and copy chrony.conf
       template:
-        src: ./chrony.conf.j2
+        src: ../chrony.conf.j2
         dest: /etc/chrony.conf
 
     - name: deploy resolv.conf template
