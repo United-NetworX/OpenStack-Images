@@ -89,6 +89,13 @@ build {
     user = "${var.ssh_username}"
   }
 
+  provisioner "ansible" {
+    playbook_file = "./Ubuntu/config_playbook.yml"
+    ansible_env_vars = ["ANSIBLE_NOCOLOR=True"]
+    extra_arguments = ["--become"]
+    user = "${var.ssh_username}"
+  }
+
   provisioner "shell" {
     execute_command = "echo '${var.ssh_password}' | {{ .Vars }} sudo -E -S bash -x '{{ .Path }}'"
     scripts         = ["Ubuntu/post_setup.sh"]
