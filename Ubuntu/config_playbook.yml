@@ -48,5 +48,5 @@
         group: root
         mode: 0644
 
-    - name: Update Repo List
-      command: sudo sed -i -e 's,http://archive.ubuntu.com/ubuntu,https://ftp.uni-stuttgart.de/ubuntu/,g' /etc/apt/sources.list
+    #- name: Update Repo List
+    #  command: sudo sed -i -e 's,http://archive.ubuntu.com/ubuntu,https://ftp.uni-stuttgart.de/ubuntu/,g' /etc/apt/sources.list
