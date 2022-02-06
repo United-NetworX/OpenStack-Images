@@ -178,7 +178,7 @@
                     <PlainText>true</PlainText>
                 </Password>
                 <Enabled>true</Enabled>
-                <Username>Admin</Username>
+                <Username>admin</Username>
             </AutoLogon>
             <FirstLogonCommands>
                 <SynchronousCommand wcm:action="add">
@@ -230,7 +230,7 @@
                     <Description>Disable Hibernation Mode</Description>
                 </SynchronousCommand>
                 <SynchronousCommand wcm:action="add">
-                    <CommandLine>cmd.exe /c wmic useraccount where "name='Admin'" set PasswordExpires=FALSE</CommandLine>
+                    <CommandLine>cmd.exe /c wmic useraccount where "name='admin'" set PasswordExpires=FALSE</CommandLine>
                     <Order>10</Order>
                     <Description>Disable password expiration for vagrant user</Description>
                 </SynchronousCommand>
@@ -285,7 +285,7 @@
                         </Password>
                         <Group>administrators</Group>
                         <DisplayName>Cloud Admin</DisplayName>
-                        <Name>Admin</Name>
+                        <Name>admin</Name>
                         <Description>Cloud Administrator</Description>
                     </LocalAccount>
                 </LocalAccounts>

@@ -1,4 +1,3 @@
-
 if "%PACKER_BUILDER_TYPE:~0,6%"=="hyperv" (
   echo "Skip compact steps in Hyper-V build."
   goto :eof
