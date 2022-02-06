@@ -85,7 +85,7 @@ source "hyperv-iso" "W2k22-HyperV" {
   winrm_username                   = "Admin"
 }
 
-source "qemu" "W2k22-QEMU" {
+source "qemu" "W2k22" {
   accelerator      = "tcg"
   boot_wait        = "0s"
   communicator     = "winrm"
@@ -105,7 +105,7 @@ source "qemu" "W2k22-QEMU" {
   winrm_username   = "Admin"
 }
 
-source "virtualbox-iso" "W2k22-VirtaulBox" {
+source "virtualbox-iso" "W2k22" {
   boot_wait            = "2m"
   communicator         = "winrm"
   cpus                 = 2
@@ -124,7 +124,7 @@ source "virtualbox-iso" "W2k22-VirtaulBox" {
   winrm_username       = "Admin"
 }
 
-source "vmware-iso" "W2k22-VMware" {
+source "vmware-iso" "W2k22" {
   boot_wait         = "2m"
   communicator      = "winrm"
   cpus              = 2
@@ -153,7 +153,7 @@ source "vmware-iso" "W2k22-VMware" {
 }
 
 build {
-  sources = ["source.hyperv-iso", "source.qemu", "source.virtualbox-iso", "source.vmware-iso"]
+  sources = ["source.hyperv-iso.W2k22", "source.qemu.W2k22", "source.virtualbox-iso.W2k22", "source.vmware-iso.W2k22"]
 
   provisioner "windows-shell" {
     execute_command = "{{ .Vars }} cmd /c \"{{ .Path }}\""
