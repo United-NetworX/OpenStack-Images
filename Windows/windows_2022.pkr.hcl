@@ -31,7 +31,7 @@ variable "iso_checksum" {
 
 variable "iso_url" {
   type    = string
-  default = "./tmp/w2k22.iso"
+  default = "https://software-download.microsoft.com/download/sg/20348.169.210806-2348.fe_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso"
 }
 
 variable "manually_download_iso_from" {
@@ -67,7 +67,7 @@ variable "winrm_timeout" {
 source "hyperv-iso" "W2k22" {
   boot_wait                        = "0s"
   communicator                     = "winrm"
-  configuration_version            = "8.0"
+  configuration_version            = "10.0"
   cpus                             = 3
   disk_size                        = "${var.disk_size}"
   enable_secure_boot               = true
