@@ -31,7 +31,7 @@ variable "iso_checksum" {
 
 variable "iso_url" {
   type    = string
-  default = "https://software-download.microsoft.com/download/sg/20348.169.210806-2348.fe_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso"
+  default = "/tmp/w2k22.iso"
 }
 
 variable "manually_download_iso_from" {
