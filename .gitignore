@@ -3,7 +3,9 @@ packer_cache/
 __pycache__/
 *.py[cod]
 *$py.class
-
+*.box
+*.qcow2
+*.vhdx
 # C extensions
 *.so
 
