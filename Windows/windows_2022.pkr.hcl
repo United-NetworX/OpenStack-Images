@@ -153,7 +153,7 @@ source "vmware-iso" "W2k22-VMware" {
 }
 
 build {
-  sources = ["source.hyperv-iso.W2k22-HyperV", "source.qemu.W2k22-QEMU", "source.virtualbox-iso.W2k22-VirtualBox", "source.vmware-iso.W2k22-VMware"]
+  sources = ["source.hyperv-iso", "source.qemu", "source.virtualbox-iso", "source.vmware-iso"]
 
   provisioner "windows-shell" {
     execute_command = "{{ .Vars }} cmd /c \"{{ .Path }}\""
