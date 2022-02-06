@@ -31,7 +31,7 @@ variable "iso_checksum" {
 
 variable "iso_url" {
   type    = string
-  default = "/tmp/w2k22.iso"
+  default = "./tmp/w2k22.iso"
 }
 
 variable "manually_download_iso_from" {
@@ -41,7 +41,7 @@ variable "manually_download_iso_from" {
 
 variable "memory" {
   type    = string
-  default = "2048"
+  default = "4096"
 }
 
 variable "restart_timeout" {
@@ -68,7 +68,7 @@ source "hyperv-iso" "W2k22" {
   boot_wait                        = "0s"
   communicator                     = "winrm"
   configuration_version            = "8.0"
-  cpus                             = 2
+  cpus                             = 3
   disk_size                        = "${var.disk_size}"
   enable_secure_boot               = true
   enable_virtualization_extensions = true
