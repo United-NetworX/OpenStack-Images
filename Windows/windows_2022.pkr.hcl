@@ -64,7 +64,7 @@ variable "winrm_timeout" {
   default = "2h"
 }
 
-source "hyperv-iso" "W2k22-HyperV" {
+source "hyperv-iso" "W2k22" {
   boot_wait                        = "0s"
   communicator                     = "winrm"
   configuration_version            = "8.0"
