@@ -9,7 +9,7 @@ on:
 
 jobs:
   packer:
-    runs-on: docker0
+    runs-on: self-hosted
     name: ubuntu-18.04
 
     steps:
