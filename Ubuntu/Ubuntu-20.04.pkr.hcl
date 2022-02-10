@@ -99,6 +99,5 @@ build {
   provisioner "shell" {
     execute_command = "echo '${var.ssh_password}' | {{ .Vars }} sudo -E -S bash -x '{{ .Path }}'"
     scripts         = ["Ubuntu/post_setup.sh"]
-  }
-  
+  } 
 }
