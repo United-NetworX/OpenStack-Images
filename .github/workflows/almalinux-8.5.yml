@@ -41,10 +41,14 @@ jobs:
         run: |
           packer build -color=false -on-error=abort Almalinux/Almalinux-8.5.pkr.hcl
 
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y.%m.%d')"
+
       # additional steps to process artifacts
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: latest
+          tag_name: ${{ steps.date.outputs.date }}
           files: |
             build/*.qcow2
