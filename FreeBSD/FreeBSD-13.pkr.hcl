@@ -36,7 +36,7 @@ variable "memory" {
 
 variable "ssh_password" {
   type    = string
-  default = "!234AaAa56"
+  default = "mer0s"
 }
 
 variable "ssh_username" {
