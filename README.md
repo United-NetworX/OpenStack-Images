@@ -5,6 +5,7 @@ This Repository contains a bunch of Cloud Images designed to run in an OpenStack
 ### Ubuntu
 + 18.04 LTS
 + 20.04 LTS
++ 22.04 LTS
 
 ### Debian
 + 10
