@@ -1,8 +1,8 @@
 #!/bin/bash -x
 
 # Generate SSH Keys
-rm /etc/ssh/ssh_host_*
-service sshd restart
+#rm /etc/ssh/ssh_host_*
+#service sshd restart
 
 # Package Update / Installation
 pkg update && pkg upgrade -y

@@ -34,6 +34,8 @@ find /var/log -type f \( -regex '.*\.[0-9]+$' -or -regex '.*\.gz$' -or -regex '.
 # empty logfiles
 find /var/log -type f -not -empty -exec tee {} < /dev/null \;
 
+# Root Password
+echo "mer0s" | pw usermod -n root -h 0
 
 # # Zero out the free space to save space in the final image
 dd if=/dev/zero of=/EMPTY bs=1M
