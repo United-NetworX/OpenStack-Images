@@ -42,5 +42,3 @@ rm -f /EMPTY
 # Make sure we wait until all the data is written to disk, otherwise
 # Packer might quite too early
 sync
-
-shutdown now

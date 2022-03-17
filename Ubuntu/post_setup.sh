@@ -72,5 +72,3 @@ sed -i -e 's/ubuntu:.*/ubuntu:*:17478:0:99999:7:::/' /etc/shadow
 # Make sure we wait until all the data is written to disk, otherwise
 # Packer might quite too early
 sync
-
-shutdown now
