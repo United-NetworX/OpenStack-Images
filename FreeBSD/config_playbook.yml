@@ -1,5 +1,5 @@
 # Debian Config Playbook
-- name: 'Configure Debian Image'
+- name: 'Configure FreeBSD Image'
   hosts: default
   become: true
   vars:
@@ -10,27 +10,13 @@
 
   tasks:
 
-    - name: Copy RootCA
-      copy:
-        src: ../ca/root_ca.crt
-        dest: /usr/share/ca-certificates/root_ca.crt
-        owner: root
-        group: root
-        mode: 0644
-    
-    - name: Copy IntermediateCA
-      copy:
-        src: ../ca/intermediate_ca.crt
-        dest: /usr/share/ca-certificates/intermediate_ca.crt
-        owner: root
-        group: root
-        mode: 0644
-    
-    - name: Update CA Certificates
-      command: update-ca-certificates
+  - name: Upgrade all installed packages
+    community.general.pkgng:
+      name: "*"
+      state: latest
 
     - name: Install NTP Chrony Package
-      apt:
+      community.general.pkgng:
        name: chrony
        state: latest
   
@@ -47,6 +33,3 @@
         owner: root
         group: root
         mode: 0644
-
-    - name: Update Repo List
-      command: sed -i -e 's,http://deb.debian.org/debian,https://ftp-stud.hs-esslingen.de/pub/Mirrors/ftp.debian.org/debian,g' /etc/apt/sources.list

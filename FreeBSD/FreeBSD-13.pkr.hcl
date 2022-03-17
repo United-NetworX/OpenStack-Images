@@ -16,7 +16,7 @@ variable "disk_size" {
 
 variable "image_checksum" {
   type    = string
-  default = "f3dac13104b4e28eb62c46cbbb1e30fc9c792834500f9101d477c19c258c31ff04850933ee0b3e63236eca38c854447d95a0ab45163c4a3fccf05f9dd95601a5"
+  default = "6d475b301d6723b8b61490dc33d96b12bb1a85a3b09331a1cd282fce83d3ed8d7bb73b43817db106b126a735e6a8bd61481f228db4f414fee071d89af3ce0647"
 }
 
 variable "image_checksum_type" {
@@ -36,12 +36,12 @@ variable "memory" {
 
 variable "ssh_password" {
   type    = string
-  default = "mer0s"
+  default = "!234AaAa56"
 }
 
 variable "ssh_username" {
   type    = string
-  default = "debian"
+  default = "root"
 }
 
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
