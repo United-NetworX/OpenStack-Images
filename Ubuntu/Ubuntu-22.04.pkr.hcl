@@ -1,4 +1,3 @@
-
 variable "cloud_init_image" {
   type    = string
   default = "Ubuntu/cloud-init.img"
