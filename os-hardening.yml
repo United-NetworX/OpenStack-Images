@@ -11,6 +11,7 @@
     os_auth_pw_min_age: 0
     os_auth_pw_remember: 2
     os_auth_pam_passwdqc_enable: false
+    os_auth_retries: 0
   tasks:
     - name: Change root password
       user:

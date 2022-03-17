@@ -44,8 +44,8 @@ find /var/log -type f -not -empty -exec tee {} < /dev/null \;
 
 
 # # Zero out the free space to save space in the final image
-# dd if=/dev/zero of=/EMPTY bs=1M
-# rm -f /EMPTY
+dd if=/dev/zero of=/EMPTY bs=1M
+rm -f /EMPTY
 
 # Remove sudoers
 sed -i -e 's/almalinux    ALL=(ALL) NOPASSWD: ALL//g' /etc/sudoers
@@ -55,3 +55,5 @@ userdel -f almalinux
 # Make sure we wait until all the data is written to disk, otherwise
 # Packer might quite too early
 sync
+
+shutdown now

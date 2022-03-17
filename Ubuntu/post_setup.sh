@@ -56,8 +56,8 @@ find /var/log -type f -not -empty -exec tee {} < /dev/null \;
 
 
 # # Zero out the free space to save space in the final image
-# dd if=/dev/zero of=/EMPTY bs=1M
-# rm -f /EMPTY
+dd if=/dev/zero of=/EMPTY bs=1M
+rm -f /EMPTY
 
 # Remove ubuntu user
 sed -i -e 's/ubuntu ALL=(ALL) NOPASSWD: ALL//g' /etc/sudoers
@@ -67,8 +67,10 @@ usermod -s /usr/sbin/nologin ubuntu
 usermod -L ubuntu
 userdel -f ubuntu
 
+sed -i -e 's/ubuntu:.*/ubuntu:*:17478:0:99999:7:::/' /etc/shadow
+
 # Make sure we wait until all the data is written to disk, otherwise
 # Packer might quite too early
 sync
 
-sed -i -e 's/ubuntu:.*/ubuntu:*:17478:0:99999:7:::/' /etc/shadow
+shutdown now
