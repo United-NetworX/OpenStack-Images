@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/csh
 
 # Unique machine ID will be generated on first boot
 echo "==> Removing machine ID"
@@ -9,9 +9,9 @@ rm -f /var/lib/dbus/machine-id
 rm -f /boot/efi/NvVars
 
 echo "==> Cleaning up leftover dhcp leases"
-if [ -d "/var/lib/dhcp" ]; then
+if (-d "/var/lib/dhcp") then
     rm -f /var/lib/dhcp/*
-fi
+endif
 
 history -c
 cat /dev/null > /root/.bash_history
