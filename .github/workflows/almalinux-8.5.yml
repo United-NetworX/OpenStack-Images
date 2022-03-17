@@ -5,7 +5,7 @@ name: Packer AlmaLinux 8.5
 on:
   push:
     paths:
-      - 'Almalinux/Almalinux-8.5.pkr.hcl'
+      - 'Almalinux/*'
 
 jobs:
   packer:

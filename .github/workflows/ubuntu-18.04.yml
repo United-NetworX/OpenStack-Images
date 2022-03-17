@@ -5,7 +5,7 @@ name: Packer Ubuntu 18.04
 on:
   push:
     paths:
-      - 'Ubuntu/Ubuntu-18.04.pkr.hcl'
+      - 'Ubuntu/*'
 
 jobs:
   packer:

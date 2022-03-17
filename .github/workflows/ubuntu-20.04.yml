@@ -5,7 +5,7 @@ name: Packer Ubuntu 20.04
 on:
   push:
     paths:
-      - 'Ubuntu/Ubuntu-20.04.pkr.hcl'
+      - 'Ubuntu/*'
 
 
 jobs:
