@@ -1,0 +1,30 @@
+#cloud-config
+disable_root: false
+password: mer0s
+ssh_pwauth: true
+chpasswd:
+  expire: false
+
+keyboard:
+  layout: de
+
+timezone: Europe/Berlin
+
+ntp:
+  enabled: true
+  servers:
+    - 85.236.210.1
+    - de.pool.ntp.org
+
+locale: en_US.UTF-8
+locale_configfile: /etc/default/locale
+
+resize_rootfs: true
+
+manage_resolv_conf: true
+resolv_conf:
+    nameservers: ['85.236.210.1', '212.71.212.71']
+    domain: cloud.meros.systems
+    options:
+        rotate: true
+        timeout: 1

@@ -1,0 +1,52 @@
+# Debian Config Playbook
+- name: 'Configure Debian Image'
+  hosts: default
+  become: true
+  vars:
+    ntp_timezone: Europe/Berlin
+    ntp_server: 85.236.210.1
+    dns_server_0: 85.236.210.1
+    dns_server_1: 212.71.212.71
+
+  tasks:
+
+    - name: Copy RootCA
+      copy:
+        src: ../ca/root_ca.crt
+        dest: /usr/share/ca-certificates/root_ca.crt
+        owner: root
+        group: root
+        mode: 0644
+    
+    - name: Copy IntermediateCA
+      copy:
+        src: ../ca/intermediate_ca.crt
+        dest: /usr/share/ca-certificates/intermediate_ca.crt
+        owner: root
+        group: root
+        mode: 0644
+    
+    - name: Update CA Certificates
+      command: update-ca-certificates
+
+    - name: Install NTP Chrony Package
+      apt:
+       name: chrony
+       state: latest
+  
+    # Copy NTP Client Config
+    - name: Compile and copy chrony.conf
+      template:
+        src: ../chrony.conf.j2
+        dest: /etc/chrony.conf
+
+    - name: deploy resolv.conf template
+      template:
+        src: ../resolv.conf.j2
+        dest: /etc/resolv.conf
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Update Repo List
+      command: sed -i -e 's,http://deb.debian.org/debian,https://ftp-stud.hs-esslingen.de/pub/Mirrors/ftp.debian.org/debian,g' /etc/apt/sources.list
