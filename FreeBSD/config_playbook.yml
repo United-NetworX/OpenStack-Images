@@ -18,7 +18,7 @@
   - name: Install NTP Chrony Package
     community.general.pkgng:
      name: chrony
-     state: latest
+     state: present
   
   # Copy NTP Client Config
   - name: Compile and copy chrony.conf
