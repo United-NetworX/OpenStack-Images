@@ -74,7 +74,7 @@ build {
   sources = ["source.qemu.freebsd"]
 
   provisioner "shell" {
-    execute_command = "echo '${var.ssh_password}' | {{ .Vars }} sudo -E -S bash -x '{{ .Path }}'"
+    execute_command = "{{ .Vars }} sudo -E -S csh -x '{{ .Path }}'"
     scripts         = ["FreeBSD/pre_setup.sh"]
   }
 
@@ -90,7 +90,7 @@ build {
   }
 
   provisioner "shell" {
-    execute_command = "echo '${var.ssh_password}' | {{ .Vars }} sudo -E -S bash -x '{{ .Path }}'"
+    execute_command = "{{ .Vars }} sudo -E -S csh -x '{{ .Path }}'"
     scripts         = ["FreeBSD/post_setup.sh"]
   }
 }
