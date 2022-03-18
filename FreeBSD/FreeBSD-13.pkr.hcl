@@ -74,7 +74,7 @@ build {
   sources = ["source.qemu.freebsd"]
 
   provisioner "shell" {
-    execute_command = "{{{ .Path }}"
+    execute_command = "{{ .Path }}"
     scripts         = ["FreeBSD/pre_setup.sh"]
   }
 
