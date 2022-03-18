@@ -78,10 +78,6 @@ build {
     scripts         = ["FreeBSD/pre_setup.sh"]
   }
 
-  provisioner "shell" {
-    inline = ["sudo sync"]
-  }
-
   provisioner "ansible" {
     playbook_file = "./FreeBSD/config_playbook.yml"
     ansible_env_vars = ["ANSIBLE_NOCOLOR=True"]
