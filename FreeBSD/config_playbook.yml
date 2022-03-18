@@ -15,21 +15,24 @@
       name: "*"
       state: latest
 
-    - name: Install NTP Chrony Package
-      community.general.pkgng:
-       name: chrony
-       state: latest
+  - name: Install NTP Chrony Package
+    community.general.pkgng:
+     name: chrony
+     state: latest
   
-    # Copy NTP Client Config
-    - name: Compile and copy chrony.conf
-      template:
-        src: ../chrony.conf.j2
-        dest: /etc/chrony.conf
+  # Copy NTP Client Config
+  - name: Compile and copy chrony.conf
+    template:
+      src: ../chrony.conf.j2
+      dest: /usr/local/etc/chrony.conf
+  
+  - name: Enable Chrony
+    command: echo "chronyd_enable="YES"" >> /etc/rc.conf 
 
-    - name: deploy resolv.conf template
-      template:
-        src: ../resolv.conf.j2
-        dest: /etc/resolv.conf
-        owner: root
-        group: root
-        mode: 0644
+  - name: deploy resolv.conf template
+    template:
+      src: ../resolv.conf.j2
+      dest: /etc/resolv.conf
+      owner: root
+      group: root
+      mode: 0644
