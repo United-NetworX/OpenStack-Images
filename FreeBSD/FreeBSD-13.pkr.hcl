@@ -74,7 +74,7 @@ build {
   sources = ["source.qemu.freebsd"]
 
   provisioner "shell" {
-    execute_command = "{{ .Path }}"
+    execute_command = "chmod +x {{ .Path }}; env {{ .Vars }} {{ .Path }}"
     scripts         = ["FreeBSD/pre_setup.sh"]
   }
 
@@ -90,7 +90,7 @@ build {
   }
 
   provisioner "shell" {
-    execute_command = "{{ .Path }}"
+    execute_command = "chmod +x {{ .Path }}; env {{ .Vars }} {{ .Path }}"
     scripts         = ["FreeBSD/post_setup.sh"]
   }
 }
