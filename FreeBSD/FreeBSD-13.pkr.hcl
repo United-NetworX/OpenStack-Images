@@ -74,7 +74,7 @@ build {
   sources = ["source.qemu.freebsd"]
 
   provisioner "shell" {
-    execute_command = "{{ .Vars }} sudo -E -S csh -x '{{ .Path }}'"
+    execute_command = "{{{ .Path }}"
     scripts         = ["FreeBSD/pre_setup.sh"]
   }
 
@@ -90,7 +90,7 @@ build {
   }
 
   provisioner "shell" {
-    execute_command = "{{ .Vars }} sudo -E -S csh -x '{{ .Path }}'"
+    execute_command = "{{ .Path }}"
     scripts         = ["FreeBSD/post_setup.sh"]
   }
 }
