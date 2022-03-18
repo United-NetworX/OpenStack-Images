@@ -1,4 +1,4 @@
-# playbook.yml
+# os-hardening.yml
 - name: 'Provision Image'
   hosts: default
   become: true
