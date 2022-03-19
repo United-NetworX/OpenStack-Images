@@ -16,7 +16,7 @@ variable "disk_size" {
 
 variable "image_checksum" {
   type    = string
-  default = "64D1D9A3AA4B0CF118C7338BF57EC62005A436A23D3F82499A786690275EE5EE"
+  default = "3C7C7FAFE5C389B9295DCAAB7A71C47CC30AD6E79E3A0C9CB164933AD2FB9814"
 }
 
 variable "image_checksum_type" {
@@ -26,7 +26,7 @@ variable "image_checksum_type" {
 
 variable "image_url" {
   type    = string
-  default = "https://object-storage.public.mtl1.vexxhost.net/swift/v1/1dbafeefbd4f4c80864414a441e72dd2/bsd-cloud-image.org/images/freebsd/13.0/freebsd-13.0-ufs.qcow2"
+  default = "https://object-storage.public.mtl1.vexxhost.net/swift/v1/1dbafeefbd4f4c80864414a441e72dd2/bsd-cloud-image.org/images/freebsd/12.2/freebsd-12.2.qcow2"
 }
 
 variable "memory" {
@@ -47,7 +47,7 @@ variable "ssh_username" {
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 locals {
-  vm_name = "freebsd-13-${local.timestamp}.qcow2"
+  vm_name = "freebsd-12-${local.timestamp}.qcow2"
 }
 
 source "qemu" "freebsd" {
