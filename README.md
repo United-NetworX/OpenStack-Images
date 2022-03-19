@@ -14,7 +14,7 @@ This Repository contains a bunch of Cloud Images designed to run in an OpenStack
 ### AlmaLinux
 + 8.5
 
-### FreeBSD (next up)
+### FreeBSD
 + 13
 
 ### Windows (next up)
