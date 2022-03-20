@@ -38,7 +38,7 @@ find /var/log -type f -not -empty -exec tee {} < /dev/null \;
 echo "mer0s" | pw usermod -n root -h 0
 
 # # Zero out the free space to save space in the final image
-dd if=/dev/zero of=/EMPTY bs=1M
+dd if=/dev/zero of=/EMPTY bs=1024K count=7000
 rm -f /EMPTY
 
 # Make sure we wait until all the data is written to disk, otherwise

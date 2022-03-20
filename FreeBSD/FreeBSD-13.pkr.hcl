@@ -16,7 +16,7 @@ variable "disk_size" {
 
 variable "image_checksum" {
   type    = string
-  default = "64D1D9A3AA4B0CF118C7338BF57EC62005A436A23D3F82499A786690275EE5EE"
+  default = "FB0C9E21D486E8330A22BF7096C92F538E4E7573141F0FF0D0F1AE78BAA2357D"
 }
 
 variable "image_checksum_type" {
@@ -26,7 +26,7 @@ variable "image_checksum_type" {
 
 variable "image_url" {
   type    = string
-  default = "https://object-storage.public.mtl1.vexxhost.net/swift/v1/1dbafeefbd4f4c80864414a441e72dd2/bsd-cloud-image.org/images/freebsd/13.0/freebsd-13.0-ufs.qcow2"
+  default = "https://object-storage.public.mtl1.vexxhost.net/swift/v1/1dbafeefbd4f4c80864414a441e72dd2/bsd-cloud-image.org/images/freebsd/13.0/freebsd-13.0-zfs.qcow2"
 }
 
 variable "memory" {
