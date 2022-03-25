@@ -1,5 +1,7 @@
 # OpenStack-Images
-This Repository contains a bunch of Cloud Images designed to run in an OpenStack Cloud enviroment.
+This Repository contains a bunch of Cloud Images designed to run in the Meros OpenStack Cloud enviroment.
+
+![](etc/Logo_Meros_side.png)
 
 ## Supportet Operating Systems
 ### Ubuntu
@@ -21,9 +23,11 @@ This Repository contains a bunch of Cloud Images designed to run in an OpenStack
 + W2k22
 
 ## Image Preperation
-The Default login for all Linux based Images `root`:`mer0s`
+The Default login for all Linux and FreeBSD based Images are:
 
-All Linux Images are hardened with the following baseline.
+ `root`:`mer0s`
+
+All Linux based Images are hardened with the following baseline.
 
 https://github.com/dev-sec/linux-baseline
 
