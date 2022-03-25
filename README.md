@@ -3,6 +3,11 @@ This Repository contains a bunch of Cloud Images designed to run in the Meros Op
 
 ![](etc/Logo_Meros_side.png)
 
+|[![Packer AlmaLinux 8.5](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/almalinux-8.5.yml/badge.svg)](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/almalinux-8.5.yml)|[![Packer Debian 10](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/debian-10.yml/badge.svg)](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/debian-10.yml)|[![Packer Ubuntu 18.04](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/ubuntu-18.04.yml/badge.svg)](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/ubuntu-18.04.yml)|
+|--|--|--|
+|[![Packer FreeBSD 13](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/freebsd-13.yml/badge.svg)](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/freebsd-13.yml)|[![Packer Debian 11](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/debian-11.yml/badge.svg)](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/debian-11.yml)|[![Packer Ubuntu 20.04](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/ubuntu-20.04.yml/badge.svg)](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/ubuntu-20.04.yml)|
+|||[![Packer Ubuntu 22.04](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/ubuntu-22.04.yml/badge.svg)](https://github.com/United-NetworX/OpenStack-Images/actions/workflows/ubuntu-22.04.yml)
+
 ## Supportet Operating Systems
 ### Ubuntu
 + 18.04 LTS
