@@ -15,7 +15,7 @@ variable "disk_size" {
 
 variable "image_checksum" {
   type    = string
-  default = "de9dbfa42feac380c8855539d25399405e76421ec482985454b0b6f90123518a"
+  default = "442b0e9222fe9dce9c4374a9e1c1626bea9e610acfa3c1cfe31e53ca88b8ebb1"
 }
 
 variable "image_checksum_type" {
@@ -25,7 +25,7 @@ variable "image_checksum_type" {
 
 variable "image_url" {
   type    = string
-  default = "https://cloud-images.ubuntu.com/minimal/daily/jammy/current/jammy-minimal-cloudimg-amd64.img"
+  default = "https://cloud-images.ubuntu.com/minimal/releases/jammy/release/ubuntu-22.04-minimal-cloudimg-amd64.img"
 }
 
 variable "memory" {
