@@ -3,6 +3,8 @@
 name: Packer Ubuntu 22.04
 
 on:
+  schedule:
+    - cron: '0 12 */15 * *'
   push:
     paths:
       - 'Ubuntu/*'

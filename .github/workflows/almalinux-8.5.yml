@@ -3,6 +3,8 @@
 name: Packer AlmaLinux 8.5
 
 on:
+  schedule:
+    - cron: '0 12 */15 * *'
   push:
     paths:
       - 'Almalinux/*'
