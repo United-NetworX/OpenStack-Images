@@ -16,7 +16,7 @@ variable "disk_size" {
 
 variable "image_checksum" {
   type    = string
-  default = "9fad572f5e9ef1ab231e2b533c96626959e325cc6ee7d6f6436f3301157356e4f2bb41151624ebfeee6809688db775685d716f114bb780f0228e8de0ac740547"
+  default = "def03482a85538b4912542a27c750a62e97e6c60d4cea2cd6e3182f1d235f14f3266a21f92d9a4e6956d2a5a80065430e1fadf1d2439d9e823abcc7b6fcddf48"
 }
 
 variable "image_checksum_type" {
